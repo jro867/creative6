@@ -7,6 +7,13 @@ body {
   color: #5a5a5a;
 }
 
+.ng-hide {
+  /* this is just another form of hiding an element */
+  display: block!important;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
 
 /* CUSTOMIZE THE NAVBAR
 -------------------------------------------------- */
@@ -41,11 +48,11 @@ body {
 }
 
 blockquote {
-    font-size:16px; 
+    font-size:16px;
     padding:18px 20px 1px 20px;
-    margin-left:3px; 
+    margin-left:3px;
     margin-bottom:40px;
-} 
+}
 
 blockquote:before {
     color: #c73401;
@@ -103,7 +110,7 @@ blockquote:before {
     background-color: #f1c40f;
     text-align: center;
     border-radius: 5px;
-  
+
     /* needed styles for the overlay */
     z-index: 10; /* keep on top of other elements on the page */
     box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
@@ -131,7 +138,7 @@ blockquote:before {
 .form-style-7 ul{
     list-style:none;
     padding:0;
-    margin:0;   
+    margin:0;
 }
 .form-style-7 li{
     display: block;
@@ -175,7 +182,7 @@ blockquote:before {
 }
 .form-style-7 input[type="text"],
 .form-style-7 textarea,
-.form-style-7 select 
+.form-style-7 select
 {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
@@ -200,7 +207,7 @@ blockquote:before {
 .form-style-7 input[type="url"]:focus,
 .form-style-7 input[type="password"]:focus,
 .form-style-7 textarea:focus,
-.form-style-7 select:focus 
+.form-style-7 select:focus
 {
 }
 .form-style-7 li > span{
@@ -265,7 +272,7 @@ blockquote:before {
 
 
 .navbar-fixed-top{
-   top: 90px; 
+   top: 90px;
 }
 .navbar-wrapper {
   position: absolute;

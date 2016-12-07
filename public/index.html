@@ -8,12 +8,52 @@
 
     <!-- Bootstrap -->
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-     <link rel="stylesheet" href="stylesheets/style.css">
+
      <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+     <link rel="stylesheet" href="stylesheets/style.css">
      <script src="javascripts/app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
+
   </head>
   <body ng-app="blogger" ng-controller="MainCtrl">
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCciZ8HnxVDnywBizJXlpDV3ED8rKd0QA0",
+        authDomain: "creative6-6621c.firebaseapp.com",
+        databaseURL: "https://creative6-6621c.firebaseio.com",
+        storageBucket: "creative6-6621c.appspot.com",
+        messagingSenderId: "1041090569456"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script>
+    function login(){
+      if (!firebase.auth().currentUser){
+        console.log("Siging with google");
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+
+        var el = document.getElementById('logginB'),
+        $el = angular.element(el),
+        $scope = $el.scope();
+        $scope.userLogin();
+      }else{
+        console.log("Logging out");
+        firebase.auth().signOut();
+
+        var el = document.getElementById('logginB'),
+        $el = angular.element(el),
+        $scope = $el.scope();
+        $scope.userLogout();
+      }
+    }
+    </script>
+
+    <button id="logginB" class="mdl-button mdl-js-button mdl-button--raised" onclick="login()">Sign in with Google</button>
+
+
 
     <div class="top-banner container"><img class="banner" src="images/banner.jpg"></img></div>
 
@@ -41,14 +81,16 @@
 
     <!-- ALL THE POST -->
     <div class="container">
-    <a href="#"><img class="add-new-content" src="images/add.png"></img></a>
+    <a ng-hide="addContentButton" class="ng-hide"></a>
+    <a ng-show="addContentButton" href="#"><img class="add-new-content" src="images/add.png"></img></a>
       <!-- Three columns of text below the carousel -->
       <div class="row" style="margin-top:60px">
 
         <div class="col-lg-4" ng-repeat="content in contents">
 
           <div class="content-card">
-            <a href="" ng-click="deleteContent($index)"><img class="delete-button" src="images/delete.png"></img></a>
+            <a ng-hide="deletePostButton"  class="ng-hide"></a>
+            <a href="" ng-click="deleteContent($index)" ng-show="deletePostButton"><img class="delete-button" src="images/delete.png"></img></a>
             <h2>{{content.title}}</h2>
             <!--<img class="intro-image" src="images/placeholder.gif">-->
             <img class="intro-image" ng-src="{{content.picture}}">
