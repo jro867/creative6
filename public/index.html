@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>Blog me away</title>
+
+    <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <link rel="stylesheet" href="stylesheets/style.css">
+     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+     <script src="javascripts/app.js"></script>
+  </head>
+  <body ng-app="blogger" ng-controller="MainCtrl">
+
+    <div class="top-banner container"><img class="banner" src="images/banner.jpg"></img></div>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default">
+      <div class="container">
+
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li><a class="about" href="#about">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!--ABOUT CONTENT -->
+      <div class="about-content"><img class="mozilla" src="images/Mozilla_dinosaur_head_logo.png"></img>Hey There! This site is meant to be
+      for adding whatever info you think its relevant to web development(news,posts, how-to, ideas or whatever you imagine that will help
+      others). <br /> <em class="who">The Web Pro team</em></div>
+      <img class="main-pic" src="images/main_w.jpg"></img>
+      <hr class="featurette-divider under-main-image">
+    </div>
+
+    <!-- ALL THE POST -->
+    <div class="container">
+    <a href="#"><img class="add-new-content" src="images/add.png"></img></a>
+      <!-- Three columns of text below the carousel -->
+      <div class="row" style="margin-top:60px">
+
+        <div class="col-lg-4" ng-repeat="content in contents">
+
+          <div class="content-card">
+            <a href="" ng-click="deleteContent($index)"><img class="delete-button" src="images/delete.png"></img></a>
+            <h2>{{content.title}}</h2>
+            <!--<img class="intro-image" src="images/placeholder.gif">-->
+            <img class="intro-image" ng-src="{{content.picture}}">
+            <div class="item">{{content.content}}</div>
+          </div>
+
+
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div><!--END OF container-->
+
+    <hr class="featurette-divider">
+
+    <!--FOOTER-->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Welcome</h2>
+          <p>This site is intended to hold important, relevant and cool info about web developemnt</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-6">
+          <blockquote>
+          <p>
+            I think this page looks awesome.Even when it does not have any content on it
+            <br>
+            <em>-Anonymous famous person</em>
+          </p>
+        </blockquote>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+    </div><!--END OF FOOTER-->
+
+
+
+
+    <!--FORM -->
+     <div class="modal">
+      <form class="form-style-7" ng-submit="addContent()">
+        <ul>
+        <li>
+            <label for="title">Title</label>
+            <input type="text" name="name" ng-model="formTitle" maxlength="300">
+            <span>Enter title of the content in here</span>
+        </li>
+        <li>
+            <label for="content">Content</label>
+            <textarea class="add-content-main"type="text" ng-model="formContent" name="content"></textarea>
+            <!-- <input class="add-content-main"type="text" name="content"> -->
+            <span>Enter content in here</span>
+        </li>
+        <li>
+            <label for="url">Image</label>
+            <input type="text" name="image" ng-model="formPicture" maxlength="100">
+            <span>Enter the image url(eg:http://myimage.jpg)</span>
+        </li>
+            <input type="submit" value="Add content" >
+            <input type="submit" class="done" value="I'm done" >
+        </li>
+        </ul>
+      </form>
+     </div> <!--enD OF FORM -->
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="javascripts/script.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+  </body>
+</html>

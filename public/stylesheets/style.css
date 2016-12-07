@@ -1,0 +1,289 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+
+.top-banner{
+  /*height:90px;*/
+  /*background-color:orange;*/
+}
+
+.main-pic{
+  width:1150px;
+  box-shadow: 0px 25px 30px grey;
+}
+
+.banner{
+  width:1150px;
+}
+
+.intro-image{
+    height:140px;
+    width: 340px;
+    padding: 5px;
+    border: 1px solid #021a40;
+    background-color: white;
+    z-index:1;
+}
+
+.under-main-image{
+  margin-bottom:10px !important;
+}
+
+blockquote {
+    font-size:16px; 
+    padding:18px 20px 1px 20px;
+    margin-left:3px; 
+    margin-bottom:40px;
+} 
+
+blockquote:before {
+    color: #c73401;
+    font-size: 70px;
+    line-height: 0.5em;
+    margin-right: 0.27em;
+    content: "\"";
+    font-family: Elephant;
+    float:left;
+}
+
+.add-new-content{
+  width:35px;
+  height: 35px;
+  z-index: 2;
+  position: absolute;
+}
+
+.about-content{
+  z-index: 5;
+  position: absolute;
+  display: none;
+  background-color: #080808;
+  height: 300px;
+  width: 1150px;
+  font-size: 14px;
+  border-radius: 0px 0px 30px 30px;
+  padding: 50px;
+  border: #84827F 10px solid;
+  margin-top: -20px;
+}
+
+.who{
+  font-size: 10px;
+  font-style:italic;
+  color: red;
+}
+.mozilla{
+  float:left;
+}
+
+
+
+
+.modal {
+    /* some styles to position the modal at the center of the page */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    line-height: 200px;
+    height: 430px;
+    margin-left: -300px;
+    margin-top: -100px;
+    background-color: #f1c40f;
+    text-align: center;
+    border-radius: 5px;
+  
+    /* needed styles for the overlay */
+    z-index: 10; /* keep on top of other elements on the page */
+    box-shadow: 0 0 0 9999px rgba(0,0,0,0.5);
+}
+
+/* FORM STYLE*/
+
+.form-style-7{
+    max-width:600px;
+    /*margin:50px auto;*/
+    line-height:0px;
+    background:#fff;
+    border-radius:2px;
+    padding:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 h1{
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0px 0px 20px 0px;
+    color: #5C5C5C;
+    font-size:x-large;
+}
+.form-style-7 ul{
+    list-style:none;
+    padding:0;
+    margin:0;   
+}
+.form-style-7 li{
+    display: block;
+    padding: 9px;
+    border:1px solid #DDDDDD;
+    margin-bottom: 30px;
+    border-radius: 3px;
+}
+
+.form-style-7 li>span {
+    background: #f3f3f3;
+    display: block;
+    padding: 0;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: silver;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 11px;
+    height: 23px;
+    line-height: 24px;
+}
+
+.form-style-7 li:last-child{
+    border:none;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.form-style-7 li>label {
+    line-height:25px !important;
+    display: block;
+    float: left;
+    height: 23px;
+    margin-top: -25px;
+    background: #fff;
+    padding: 2px 5px 2px 5px;
+    color: #b9b9b9;
+    font-size: 14px;
+    overflow: hidden;
+    font-family: Arial,Helvetica,sans-serif;
+    font-weight: normal;
+}
+.form-style-7 input[type="text"],
+.form-style-7 textarea,
+.form-style-7 select 
+{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    width: 100%;
+    display: block;
+    outline: none;
+    border: none;
+    height: 25px;
+    line-height: 25px;
+    font-size: 16px;
+    padding: 0;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+.form-style-7 input[type="text"]:focus,
+.form-style-7 input[type="date"]:focus,
+.form-style-7 input[type="datetime"]:focus,
+.form-style-7 input[type="email"]:focus,
+.form-style-7 input[type="number"]:focus,
+.form-style-7 input[type="search"]:focus,
+.form-style-7 input[type="time"]:focus,
+.form-style-7 input[type="url"]:focus,
+.form-style-7 input[type="password"]:focus,
+.form-style-7 textarea:focus,
+.form-style-7 select:focus 
+{
+}
+.form-style-7 li > span{
+    background: #F3F3F3;
+    display: block;
+    padding: 3px;
+    margin: 0 -9px -9px -9px;
+    text-align: center;
+    color: #C0C0C0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+.form-style-7 textarea{
+    resize:none;
+}
+.form-style-7 input[type="submit"],
+.done,
+.form-style-7 input[type="button"]{
+    background: #2471FF;
+    border: none;
+    padding: 10px 20px 10px 20px;
+    border-bottom: 3px solid #5994FF;
+    border-radius: 3px;
+    color: #D2E2FF;
+    line-height:0px;
+    /*display:block !important;*/
+    /*height:auto !important;*/
+    height: 40px !important;
+    /*margin-left: 220px!important;*/
+}
+.form-style-7 input[type="submit"]:hover,
+.form-style-7 input[type="button"]:hover{
+    background: #6B9FFF;
+    color:#fff;
+}
+.add-content-main{
+  height: 90px;
+  min-height: 90px;
+  max-height: 300px;
+  transition: height 0.25s;
+}
+
+.done{
+  background: #f46c3a !important;
+}
+
+.delete-button{
+      width: 50px;
+    float: right;
+    /*display:none;*/
+}
+
+/*END OF FORM STYLE*/
+
+
+
+
+
+
+
+
+
+
+.navbar-fixed-top{
+   top: 90px; 
+}
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
