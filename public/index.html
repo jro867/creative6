@@ -81,15 +81,14 @@
 
     <!-- ALL THE POST -->
     <div class="container">
-    <a ng-hide="addContentButton" class="ng-hide"></a>
-    <a ng-show="addContentButton" href="#"><img class="add-new-content" src="images/add.png"></img></a>
+    <a class="addContentButton" href="#"><img class="add-new-content" src="images/add.png"></img></a>
       <!-- Three columns of text below the carousel -->
       <div class="row" style="margin-top:60px">
 
         <div class="col-lg-4" ng-repeat="content in contents">
 
           <div class="content-card">
-            <a ng-hide="deletePostButton"  class="ng-hide"></a>
+            <a class="deletePostButton"></a>
             <a href="" ng-click="deleteContent($index)" ng-show="deletePostButton"><img class="delete-button" src="images/delete.png"></img></a>
             <h2>{{content.title}}</h2>
             <!--<img class="intro-image" src="images/placeholder.gif">-->

@@ -18,14 +18,14 @@ angular.module('blogger', [])
 
     $scope.userLogin = function(){
       console.log("loggin in angular");
-      $scope.addContentButton = true;
-      $scope.deletePostButton = true;
+      $("#addContentButton").show();
+      $("#deletePostButton").show();
     }
 
     $scope.userLogout = function(){
       console.log("loggout in angular");
-      $scope.addContentButton = false;
-      $scope.deletePostButton = false;
+        $("#addContentButton").hide();
+        $("#deletePostButton").hide();
     }
 
 
