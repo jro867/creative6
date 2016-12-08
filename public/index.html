@@ -106,7 +106,7 @@
         <div class="col-lg-4" ng-repeat="content in contents">
 
           <div class="content-card">
-            <a class="deletePostButton"><img class="delete-button" src="images/delete.png"></img></a>
+            <a class="deletePostButton" ng-click="deleteContent($index)" href="#"><img class="delete-button" src="images/delete.png"></img></a>
             <h2>{{content.title}}</h2>
             <!--<img class="intro-image" src="images/placeholder.gif">-->
             <img class="intro-image" ng-src="{{content.picture}}">
