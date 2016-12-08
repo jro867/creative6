@@ -46,6 +46,16 @@ angular.module('blogger', [])
       });
     };
 
+    $scope.load = function() {
+      if (firebase.auth().currentUser){
+        console.log("has current user");
+        $scope.userLogin(firebase.auth().currentUser);
+        $("#logginB").html("Sign Out");
+      }
+    }
+
+    $scope.load();
+
 
 
 	$scope.addContent = function(){

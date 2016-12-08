@@ -30,16 +30,6 @@
     </script>
     <script>
 
-    function load() {
-      if (firebase.auth().currentUser){
-        console.log("has current user");
-        $scope.userLogin(firebase.auth().currentUser);
-        $("#logginB").html("Sign Out");
-      }
-    }
-
-    load();
-
     function login(){
       if (!firebase.auth().currentUser){
         console.log("Singing in with google");
