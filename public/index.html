@@ -35,6 +35,8 @@
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
 
+        console.log(firebase.auth().currentUser);
+        
         var el = document.getElementById('logginB');
         el.html("Sign Out");
         $el = angular.element(el);
@@ -68,6 +70,7 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a class="about" href="#about">About</a></li>
           </ul>
+          <div class="user-greeting">Welcome, {{ user }}!! Enjoy our Service!</div>
         </div>
       </div>
     </nav>
