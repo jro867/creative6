@@ -3,8 +3,8 @@ angular.module('blogger', [])
   '$scope','$http',
   function($scope,$http){
    //  $scope.test = 'Hello world!';
-   $scope.addContentButton = false;
-   $scope.deletePostButton = false;
+   // $scope.addContentButton = false;
+   // $scope.deletePostButton = false;
 
 	  $scope.contents = [
       {
@@ -29,8 +29,6 @@ angular.module('blogger', [])
         $("#deletePostButton").hide();
     }
 
-
-
     $scope.create = function(data){
       return $http.post('/content', data).success(function(data){
         // console.log("Blame thing: ", data);
@@ -47,14 +45,15 @@ angular.module('blogger', [])
     };
 
     $scope.load = function() {
-      if (firebase.auth().currentUser){
+      if(user){
         console.log("has current user");
-        $scope.userLogin(firebase.auth().currentUser);
+        $scope.userLogin(user);
         $("#logginB").html("Sign Out");
       }
+      else {
+        console.log("doesn't have current user");
+      }
     }
-
-    $scope.load();
 
 
 
