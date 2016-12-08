@@ -16,7 +16,7 @@
      <script src="https://www.gstatic.com/firebasejs/3.6.3/firebase.js"></script>
 
   </head>
-  <body ng-app="blogger" ng-controller="MainCtrl" onload="load()">
+  <body ng-app="blogger" ng-controller="MainCtrl">
     <script>
       // Initialize Firebase
       var config = {
@@ -37,7 +37,6 @@
         $("#logginB").html("Sign Out");
       }
     }
-
 
     function login(){
       if (!firebase.auth().currentUser){
