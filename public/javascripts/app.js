@@ -16,8 +16,9 @@ angular.module('blogger', [])
       {title:"Using Angular CLI to create Angular 2 applications in Docker", picture:"https://yellowpencil.com/assets/blog/banners/banner-angularjs.jpg", content:"Angular CLI is a great tool for developing  Angular 2 applications.  Now that the final 2.0 release is out and the masses are starting to be interested I thought it would be fun to do a quick demo of how you can try out the Angular CLI (github) project without having to install all the tools on your local machine.  The caveat there is that I assume you already have Docker installed. In that file we specify we want to use the current Node.js image as our base. Then we setup our home directory so our code will have a place to live. Next we use NPM (Node Package Manager) to install the Angular CLI tool chain. Then we expose the default port the Angular 2 project will be served to the browser from, and we open up the port that will be used for live reloading of code. Next we want to create a docker-compose.yml file which will define our service we will use to execute the build commands and run our development web server iniside."},
     ];
 
-    $scope.userLogin = function(){
+    $scope.userLogin = function(var user){
       console.log("loggin in angular");
+      $scope.currentUser = user;
       $("#addContentButton").show();
       $("#deletePostButton").show();
     }

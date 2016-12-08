@@ -31,23 +31,23 @@
     <script>
     function login(){
       if (!firebase.auth().currentUser){
-        console.log("Siging with google");
+        console.log("Singing in with google");
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
 
         console.log(firebase.auth().currentUser);
         
         var el = document.getElementById('logginB');
-        el.html("Sign Out");
+        $("#logginB").html("Sign Out");
         $el = angular.element(el);
         $scope = $el.scope();
-        $scope.userLogin();
+        $scope.userLogin(firebase.auth().currentUser);
       }else{
         console.log("Logging out");
         firebase.auth().signOut();
 
         var el = document.getElementById('logginB');
-        el.html("Sign in with Google");
+        $("#logginB").html("Sign in with Google");
         $el = angular.element(el);
         $scope = $el.scope();
         $scope.userLogout();
@@ -70,7 +70,7 @@
             <li class="active"><a href="#">Home</a></li>
             <li><a class="about" href="#about">About</a></li>
           </ul>
-          <div class="user-greeting">Welcome, {{ user }}!! Enjoy our Service!</div>
+          <div class="user-greeting">Welcome, {{ user.name }}!! Enjoy our Service!</div>
         </div>
       </div>
     </nav>
