@@ -17,10 +17,7 @@ angular.module('blogger', [])
     ];
 
     $scope.userLogin = function(user){
-      console.log("loggin in angular");
-      $scope.currentUser = user;
-      $("#addContentButton").show();
-      $("#deletePostButton").show();
+
     }
 
     $scope.userLogout = function(){

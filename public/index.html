@@ -33,13 +33,13 @@
     firebase.auth().onAuthStateChanged(function(user) {
       if(user){
         console.log("user logged in");
-        $("#addContentButton").show();
-        $("#deletePostButton").show();
+        $(".addContentButton").show();
+        $(".deletePostButton").show();
         $("#logginB").html('Sign Out');
       }
       else {
-        $("#addContentButton").hide();
-        $("#deletePostButton").hide();
+        $(".addContentButton").hide();
+        $(".deletePostButton").hide();
         $("#logginB").html('Sign in with Google');
       }
     })
