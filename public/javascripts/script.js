@@ -28,7 +28,8 @@ $(document).ready(function(){
       });
 
       $(".delete-button").click(function(){
-        // $(document).createTextPrev();
+        $(".addContentButton").show();
+        $(".deletePostButton").show();
       });
 
 
