@@ -31,6 +31,7 @@
     <script>
 
     if (firebase.auth().currentUser){
+      console.log("has current user");
       $scope.userLogin(firebase.auth().currentUser);
       $("#logginB").html("Sign Out");
     }
@@ -75,7 +76,7 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a class="about" href="#about">About</a></li>
-            <li class="user-greeting">Welcome, {{ user.name }}!! Enjoy our Service!</li>
+            <li class="user-greeting">Welcome, {{ user.displayName }}!! Enjoy our Service!</li>
           </ul>
         </div>
       </div>
