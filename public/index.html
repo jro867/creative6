@@ -31,7 +31,17 @@
     <script>
 
     firebase.auth().onAuthStateChanged(function(user) {
-      $scope.load(user);
+      if(user){
+        console.log("user logged in");
+        $("#addContentButton").show();
+        $("#deletePostButton").show();
+        $("#logginB").html('Sign Out');
+      }
+      else {
+        $("#addContentButton").hide();
+        $("#deletePostButton").hide();
+        $("#logginB").html('Sign in with Google');
+      }
     })
 
     function login(){
@@ -40,21 +50,21 @@
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
         
-        var el = document.getElementById('logginB');
-        $("#logginB").html("Sign Out");
-        $el = angular.element(el);
-        $scope = $el.scope();
-        $scope.userLogin(firebase.auth().currentUser);
+        // var el = document.getElementById('logginB');
+        // $("#logginB").html("Sign Out");
+        // $el = angular.element(el);
+        // $scope = $el.scope();
+        // $scope.userLogin(firebase.auth().currentUser);
       }else{
         console.log("Logging out");
         console.log(firebase.auth().currentUser);
         firebase.auth().signOut();
 
-        var el = document.getElementById('logginB');
-        $("#logginB").html("Sign in with Google");
-        $el = angular.element(el);
-        $scope = $el.scope();
-        $scope.userLogout();
+        // var el = document.getElementById('logginB');
+        // $("#logginB").html("Sign in with Google");
+        // $el = angular.element(el);
+        // $scope = $el.scope();
+        // $scope.userLogout();
       }
     }
     </script>
@@ -73,7 +83,6 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
             <li><a class="about" href="#about">About</a></li>
-            <li class="user-greeting">Welcome, {{ user.displayName }}!! Enjoy our Service!</li>
           </ul>
         </div>
       </div>

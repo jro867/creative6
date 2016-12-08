@@ -44,17 +44,6 @@ angular.module('blogger', [])
       });
     };
 
-    $scope.load = function() {
-      if(user){
-        console.log("has current user");
-        $scope.userLogin(user);
-        $("#logginB").html("Sign Out");
-      }
-      else {
-        console.log("doesn't have current user");
-      }
-    }
-
 
 
 	$scope.addContent = function(){
