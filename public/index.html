@@ -35,16 +35,18 @@
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
 
-        var el = document.getElementById('logginB'),
-        $el = angular.element(el),
+        var el = document.getElementById('logginB');
+        el.html("Sign Out");
+        $el = angular.element(el);
         $scope = $el.scope();
         $scope.userLogin();
       }else{
         console.log("Logging out");
         firebase.auth().signOut();
 
-        var el = document.getElementById('logginB'),
-        $el = angular.element(el),
+        var el = document.getElementById('logginB');
+        el.html("Sign in with Google");
+        $el = angular.element(el);
         $scope = $el.scope();
         $scope.userLogout();
       }
