@@ -29,13 +29,18 @@
       firebase.initializeApp(config);
     </script>
     <script>
+
+    if (firebase.auth().currentUser){
+      $scope.userLogin(firebase.auth().currentUser);
+      $("#logginB").html("Sign Out");
+    }
+
+
     function login(){
       if (!firebase.auth().currentUser){
         console.log("Singing in with google");
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
-
-        console.log(firebase.auth().currentUser);
         
         var el = document.getElementById('logginB');
         $("#logginB").html("Sign Out");
@@ -44,6 +49,7 @@
         $scope.userLogin(firebase.auth().currentUser);
       }else{
         console.log("Logging out");
+        console.log(firebase.auth().currentUser);
         firebase.auth().signOut();
 
         var el = document.getElementById('logginB');
