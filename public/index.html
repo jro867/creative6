@@ -30,14 +30,39 @@
     </script>
     <script>
 
-    firebase.auth().onAuthStateChanged(function(user) {
+    firebase.auth().onAuthStateChanged(function(user){
       if(user){
+
+        var loggiAs = $("<span>Loggin As:</span>").addClass("loggin-as");
+        var userName = $("<div>"+user.email+"</div>").addClass("user-name");
+        var userData = $("<div></div>").addClass("user-data");
+
+
+        var userImage = $("<img src="+user.photoURL+"></img>").addClass("user-image");
+        var userInfo = $("<div></div>").addClass("userInfo");
+
+
+        $("#banner-loggin").prepend(userInfo);
+        $('.userInfo').append(userData);
+        $('.userInfo').append(userImage);
+
+        $('.user-data').append(loggiAs);
+        $('.user-data').append(userName);
+
+        // $(".userInfo").html(user.email);
+
         console.log("user logged in");
         $(".addContentButton").show();
         $(".deletePostButton").show();
         $("#logginB").html('Sign Out');
+
+        $("#banner-loggin").show();
+        $('#banner-logout').hide();
       }
       else {
+        $("#banner-loggin").hide();
+        $('#banner-logout').show();
+
         $(".addContentButton").hide();
         $(".deletePostButton").hide();
         $("#logginB").html('Sign in with Google');
@@ -49,7 +74,7 @@
         console.log("Singing in with google");
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
-        
+
         // var el = document.getElementById('logginB');
         // $("#logginB").html("Sign Out");
         // $el = angular.element(el);
@@ -69,10 +94,21 @@
     }
     </script>
 
-    <button id="logginB" class="mdl-button mdl-js-button mdl-button--raised" onclick="login()">Sign in with Google</button>
 
 
 
+    <div id="top-banner" class="container">
+      <div id="banner-logout" class="banner-left">
+        <div id="disclaimer">Login to have edit privileges</div>
+      </div>
+      <div id="banner-loggin" class="banner-left">
+
+      </div>
+      <div class="banner-right">
+        <button id="logginB" class="mdl-button mdl-js-button mdl-button--raised" onclick="login()">Sign in with Google</button>
+      </div>
+
+    </div>
     <div class="top-banner container"><img class="banner" src="images/banner.jpg"></img></div>
 
     <!-- Fixed navbar -->
